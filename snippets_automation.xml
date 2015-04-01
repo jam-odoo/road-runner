@@ -1,0 +1,21 @@
+Ledands 
+- isa    > ir_server_actions
+- aa     > automted_ations
+
+        <record model="ir.actions.server" id="isa_">
+            <field name="name"></field>
+            <field name="model_id" ref=""/>
+            <field name="state">code</field>
+            <field name="code"><![CDATA[
+
+]]>
+            </field>
+        </record>
+
+        <record model="base.action.rule" id="aa_" >
+            <field name="name"> Actions</field>
+            <field name="model_id" ref=""/>
+            <field name="active" eval="True"/>
+            <field name="kind">on_create_or_write</field>
+            <field name="server_action_ids" eval="[(6, 0, [ref('isa_')])]"/>
+        </record>
